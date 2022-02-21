@@ -12,9 +12,15 @@ session_start();
 
 class CategoryController extends Controller
 {
-    public function add_category()
+    public function add_category($category_id)
     {
-        return view('admin.add_category');
+        return Category::find($category_id);
+        // return view('admin.add_category');
+    }
+    public function add_category_all()
+    {
+        return Category::all();
+        // return view('admin.add_category');
     }
     public function save_category(Request $request)
     {
