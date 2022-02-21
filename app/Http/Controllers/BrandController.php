@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 
 class BrandController extends Controller
 {
+    // Brand
     public function api_brand_id($brand_id)
     {
         return Brand::find($brand_id);
@@ -17,6 +18,8 @@ class BrandController extends Controller
     {
         return Brand::all();
     }
+
+
     public function add_brand()
     {
         return view('admin.add_brand');
