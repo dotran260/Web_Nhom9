@@ -16,18 +16,20 @@ Route::get('/dashboard', [AdminController::class, 'show']);
 // DANH MỤC
 /*|----------------------------Strart category------------------------------------|*/
 
-Route::get('admin/getCategory/{category_id}', [CategoryController::class, 'add_category']);
-Route::get('admin/getCategory', [CategoryController::class, 'add_category_all']);
-// Route::get('admin/list-category', [CategoryController::class, 'list_category']);
-// Route::get('admin/edit-category/{category_id}', [CategoryController::class, 'edit_category']);
+Route::get('admin/getCategory/{category_id}', [CategoryController::class, 'api_category_id']); //API
+Route::get('admin/getCategory', [CategoryController::class, 'api_category_all']); //API
+Route::get('admin/add-category', [CategoryController::class, 'add_category']);
 
-// Route::get('/delete-category/{category_id}', [CategoryController::class, 'delete_category']);
-// Route::post('/save-category', [CategoryController::class, 'save_category']);
-// Route::post('/update-category/{category_id}', [CategoryController::class, 'update_category']);
+Route::get('admin/list-category', [CategoryController::class, 'list_category']);
+Route::get('admin/edit-category/{category_id}', [CategoryController::class, 'edit_category']);
 
-// Route::get('/hidden-category/{category_id}', [CategoryController::class, 'hidden_category']);
-// Route::get('/active-category/{category_id}', [CategoryController::class, 'active_category']);
-// /*|----------------------------End category------------------------------------|*/
+Route::get('/delete-category/{category_id}', [CategoryController::class, 'delete_category']);
+Route::post('/save-category', [CategoryController::class, 'save_category']);
+Route::post('/update-category/{category_id}', [CategoryController::class, 'update_category']);
+
+Route::get('/hidden-category/{category_id}', [CategoryController::class, 'hidden_category']);
+Route::get('/active-category/{category_id}', [CategoryController::class, 'active_category']);
+/*|----------------------------End category------------------------------------|*/
 
 // // THƯƠNG HIỆU
 // /*|----------------------------Strart brand------------------------------------|*/
